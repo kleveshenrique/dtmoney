@@ -20,8 +20,8 @@ export const Content = styled.div`
         color: #FFF;
         height: 3rem;
         background: var(--blue-light);
-        transition: all 0.2s;
-
+        transition: all 0.2s;    
+        
         &:hover {
             filter: brightness(0.9);
         }

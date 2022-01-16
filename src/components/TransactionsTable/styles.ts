@@ -12,16 +12,16 @@ export const Container = styled.div`
             font-weight: 400;
             padding: 1rem 2rem;
             text-align:left;        
-            line-height: 1.5rem;
+            line-height:1.5rem;            
         }
 
         td {             
             padding: 1rem 2rem;
             background: var(--shape);
             color: var(--text-body);
-            boder-radius: 0.25rem;
+            border-radius: 0.25rem;
 
-            &:nth-of-type(2) {
+            &:nth-of-type(1) {
                 color: var(--text-title);
             }
         }
