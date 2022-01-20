@@ -11,22 +11,13 @@ Modal.setAppElement('#root');
 
 export function App() {
   
-  const [isNewTransactionModalOpen, setIsNewTransactionModalOpen] = React.useState(false);
-
-  function handleOpenNewTransactionModal() {
-    setIsNewTransactionModalOpen(true);
-  }  
-
-  function handleCloseNewTransactionModal() {
-    setIsNewTransactionModalOpen(false);
-  }  
+  
 
   return (
     <TransactionsProvider>
-
-      <Header onOpenNewTransactionModal={handleOpenNewTransactionModal}/>
+      <Header/>
       <Dashboard />
-      <NewTransactionModal isOpen={isNewTransactionModalOpen} onRequestClose={handleCloseNewTransactionModal}/>
+      <NewTransactionModal/>
       
       <GlobalStyle /> 
 

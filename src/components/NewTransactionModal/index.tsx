@@ -6,19 +6,16 @@ import inCome from "../../assets/income.svg"
 import outCome from "../../assets/outcome.svg"
 import { useTransactions } from "../../hooks/useTransactions"
 
-interface newTransactionModalProps {
-    isOpen: boolean
-    onRequestClose:()=>void
-}
 
-export function NewTransactionModal({isOpen,onRequestClose}:newTransactionModalProps){
+
+export function NewTransactionModal(){
   
     const [type, setType]  = useState('deposit')
     const [title,setTitle] = useState('')
     const [amount,setAmount] = useState(0)
     const [category,setCategory] = useState('')
 
-    const {createTransaction} = useTransactions()
+    const {createTransaction,isNewTransactionModalOpen,handleCloseNewTransactionModal} = useTransactions()
 
     async function handleCreateNewTransaction(event: FormEvent){
       event.preventDefault()
@@ -34,19 +31,19 @@ export function NewTransactionModal({isOpen,onRequestClose}:newTransactionModalP
       setAmount(0)
       setCategory('')
       setType('deposit')
-      onRequestClose()
+      handleCloseNewTransactionModal()
       
     }
     
     return (
 
       <Modal
-        isOpen={isOpen}
-        onRequestClose={onRequestClose} 
+        isOpen={isNewTransactionModalOpen}
+        onRequestClose={handleCloseNewTransactionModal} 
         className="react-modal-content"
         overlayClassName="react-modal-overlay"
       >
-        <button type="button" className="react-modal-close" onClick={onRequestClose}>
+        <button type="button" className="react-modal-close" onClick={handleCloseNewTransactionModal}>
           <img src={imgClose} alt="Fechar"/>
         </button>
 

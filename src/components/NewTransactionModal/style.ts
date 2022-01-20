@@ -63,7 +63,7 @@ const colors = {
 }
 
 export const RadioBox = styled.button<RadioBoxProps>`
-    display: flex;
+        display: flex;
         justify-content: center;
         align-items: center;
         height: 4rem;

@@ -1,18 +1,16 @@
 import LogoImg from "../../assets/logo.svg"
+import { useTransactions } from "../../hooks/useTransactions"
 import { Container, Content } from "./styles"
 
-interface modal {
-    onOpenNewTransactionModal: ()=> void;
-}
+export function Header() {    
 
-export function Header({onOpenNewTransactionModal}: modal) {    
-
+    const {handleOpenNewTransactionModal} = useTransactions()
     return (
         <Container>
             <Content>
                 <img src={LogoImg} alt="Dt Money" />
-                <button type="button" onClick={onOpenNewTransactionModal}>Nova transação</button>
-            </Content>            
+                <button type="button" onClick={handleOpenNewTransactionModal}>Nova transação</button>
+            </Content>           
             
         </Container>
     )
